@@ -3,6 +3,9 @@ package com.kheiron;
 public class Main {
 
     public static void main(String[] args) {
+        
+        // This part is for testing purposes
+        
 //        printMegaBytesAndKiloBytes (0);
 //        if ((bark (true, 8))) {
 //            System.out.println ("Wake up at " + 8);}
@@ -45,118 +48,119 @@ public class Main {
 //    printEqual (-1,-1,-1);
 //    printEqual (1,2,3);
 
-    if (isCatPlaying (true, 10)) {
-        System.out.println ("Cat is playing");
-        } else System.out.println ("Cat is not playing");
-            if (isCatPlaying (false, 36)) {
-        System.out.println ("Cat is playing");
-        } else System.out.println ("Cat is not playing");
-            if (isCatPlaying (false, 35)) {
-        System.out.println ("Cat is playing");
-        } else System.out.println ("Cat is not playing");
+//    if (isCatPlaying (true, 10)) {
+//        System.out.println ("Cat is playing");
+//       } else System.out.println ("Cat is not playing");
+//            if (isCatPlaying (false, 36)) {
+//        System.out.println ("Cat is playing");
+//        } else System.out.println ("Cat is not playing");
+//            if (isCatPlaying (false, 35)) {
+//        System.out.println ("Cat is playing");
+//        } else System.out.println ("Cat is not playing");
+}
+    
+    
+    // This method  will convert KBs to MBs and also display the remaining KBs
+    public static void printMegaBytesAndKiloBytes(int kiloBytes) {
+        int mb = 0;
+        int kb = 0;
 
+        if (kiloBytes <= 0) {
+            System.out.println ("Invalid Value");
+        } else {
+            mb = kiloBytes / 1024;
+            kb = kiloBytes % 1024;
+            System.out.println (kiloBytes + " KB = " + mb +
+                    " MB and " + kb + " KB.");
+        }
+   }
 
+    // This method will display t/f if the dog is barking at certain periods of time
+public static boolean bark (boolean barking, int hourOfDay) {
+        if (!barking)
+            return false;
 
+        if (hourOfDay < 0 || hourOfDay > 23) {
+            return false;
+        } else if ((hourOfDay >= 8 && hourOfDay <= 22))
+            return false;
+        return true;
+}
 
+    // This method calculates if a year is a leap year or not
+public static boolean isLeapYear (int year) {
+    if (year < 1) return false;
+    if (year > 9999) return false;
+    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) return true;
+    return false;
+}
+
+    // This method will return True if the values are the same up until three decimal places
+public static boolean areEqualByThreeDecimalPlaces (double aaa, double bbb) {
+        double checkAaa = (int) (1000 * aaa);
+        double checkBbb = (int) (1000 * bbb);
+        if (checkAaa == checkBbb) return true;
+        return false;
+}
+
+    // This method will display T if the sum of the first two values entered are equal to the third
+public static boolean hasEqualSum (int first, int second, int total) {
+        if (first + second == total) return true;
+        return false;
+}
+
+    // This method will return TRUE if the age entered is of a teenager's
+    public static boolean hasTeen (int first, int second, int third) {
+        if ((first < 20 && first > 12) ||
+                (second < 20 && second > 12) ||
+                (third < 20 && third > 12)) return true;
+        return false;
     }
-//    // 1 MB = 1024 kb
-//    public static void printMegaBytesAndKiloBytes(int kiloBytes) {
-//        int mb = 0;
-//        int kb = 0;
-//
-//        if (kiloBytes <= 0) {
-//            System.out.println ("Invalid Value");
-//        } else {
-//            mb = kiloBytes / 1024;
-//            kb = kiloBytes % 1024;
-//            System.out.println (kiloBytes + " KB = " + mb +
-//                    " MB and " + kb + " KB.");
-//        }
-//
-//    }
 
+    // This method overloading returns the area of a circle or of a rectangle
+    public static double area (double radius) {
+        if (radius < 0) {
+            System.out.println ("Invalid radius value");
+            return -1;
+        }
+        double sqareRadius = radius * radius;
+        return (sqareRadius * 3.14159);
+    }
+    public static double area (double x, double y) {
+        if (x < 0 || y < 0) {
+            System.out.println ("Invalid rectangles values");
+            return -1;
+        }
+        System.out.println ("Area of the rectangle is: ");
+        return x * y;
+    }
 
-//public static boolean bark (boolean barking, int hourOfDay) {
-//        if (!barking)
-//            return false;
-//
-//        if (hourOfDay < 0 || hourOfDay > 23) {
-//            return false;
-//        } else if ((hourOfDay >= 8 && hourOfDay <= 22))
-//            return false;
-//        return true;
-//}
+    // This method calculates and displays converted Years and Days from minutes
+    public static void printYearsAndDays (long minutes) {
+        if (minutes < 0) System.out.println ("Invalid Value");
+        else {
+                long year = (minutes / 1440) / 365;
+                long minutesWithoutYears = (minutes - year * 1440 * 365);
+                long day = minutesWithoutYears / 1440;
+            System.out.println (minutes + " min = " + year + " y and " + day + " d");
+            }
+        }
 
-//public static boolean isLeapYear (int year) {
-//    if (year < 1) return false;
-//    if (year > 9999) return false;
-//    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) return true;
-//    return false;
-//}
+        // This method checks if the numbers are equal or not and displays the according message
+    public static void printEqual (int first, int second, int third) {
+        if (first < 0 || second < 0 || third < 0) {
+            System.out.println ("Invalid Value");
+        } else if (first == second && second == third) {
+            System.out.println ("All numbers are equal");
+        } else if (first != second && first != third && second != third) {
+            System.out.println ("All numbers are different");
+        } else {
+            System.out.println ("Neither all are equal or different");
+        }
+    }
 
-
-//public static boolean areEqualByThreeDecimalPlaces (double aaa, double bbb) {
-//        double checkAaa = (int) (1000 * aaa);
-//        double checkBbb = (int) (1000 * bbb);
-//        if (checkAaa == checkBbb) return true;
-//        return false;
-//
-//
-//
-//}
-
-
-//public static boolean hasEqualSum (int first, int second, int total) {
-//        if (first + second == total) return true;
-//        return false;
-//}
-
-//    public static boolean hasTeen (int first, int second, int third) {
-//        if ((first < 20 && first > 12) ||
-//                (second < 20 && second > 12) ||
-//                (third < 20 && third > 12)) return true;
-//        return false;
-//    }
-
-//    public static double area (double radius) {
-//        if (radius < 0) {
-//            System.out.println ("Invalid radius value");
-//            return -1;
-//        }
-//        double sqareRadius = radius * radius;
-//        return (sqareRadius * 3.14159);
-//    }
-//    public static double area (double x, double y) {
-//        if (x < 0 || y < 0) {
-//            System.out.println ("Invalid rectangles values");
-//            return -1;
-//        }
-//        System.out.println ("Area of the rectangle is: ");
-//        return x * y;
-//    }
-
-//    public static void printYearsAndDays (long minutes) {
-//        if (minutes < 0) System.out.println ("Invalid Value");
-//        else {
-//                long year = (minutes / 1440) / 365;
-//                long minutesWithoutYears = (minutes - year * 1440 * 365);
-//                long day = minutesWithoutYears / 1440;
-//            System.out.println (minutes + " min = " + year + " y and " + day + " d");
-//            }
-//        }
-
-//    public static void printEqual (int first, int second, int third) {
-//        if (first < 0 || second < 0 || third < 0) {
-//            System.out.println ("Invalid Value");
-//        } else if (first == second && second == third) {
-//            System.out.println ("All numbers are equal");
-//        } else if (first != second && first != third && second != third) {
-//            System.out.println ("All numbers are different");
-//        } else {
-//            System.out.println ("Neither all are equal or different");
-//        }
-//    }
-
+        // This method returns TRUE if the cat is playing at certain temperatures. 
+        // In summer the maximum temperature is 45 instead of 35
     public static boolean isCatPlaying (boolean summer, int temperature) {
         if (temperature < 0) {
             return false;
@@ -166,9 +170,4 @@ public class Main {
             if (temperature > 24 && temperature < 36) return true;
         return false;
     }
-
-
-
-
-
 }
