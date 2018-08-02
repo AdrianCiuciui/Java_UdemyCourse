@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         
         // This part is for testing purposes
+        // Scroll to the methods to see the actual code
         
 //        printMegaBytesAndKiloBytes (0);
 //        if ((bark (true, 8))) {
