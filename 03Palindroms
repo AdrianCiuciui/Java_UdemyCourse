@@ -18,4 +18,3 @@
         System.out.println ("This is not a palindrome " + number);
         return false;
     }
-
