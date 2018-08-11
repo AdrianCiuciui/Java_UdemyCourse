@@ -1,0 +1,39 @@
+// Checks if a number is Palindrome ----------------------------
+
+    public static boolean isPalindrome (int number) {
+
+        int number2 = number, numberReversed = 0;
+        if (number2 < 0) number2 *= -1;
+        while (number2 > 0) {
+            numberReversed += number2 % 10;
+            numberReversed *= 10;
+            number2 /= 10;
+        }
+        numberReversed /= 10;
+
+        if (number == numberReversed || (-1 * number == numberReversed)) {
+            System.out.println ("This is a palindrome " + number);
+            return true;
+            }
+        System.out.println ("This is not a palindrome " + number);
+        return false;
+    }
+
+// Adds the First and Last digits of a positive number -----------------
+
+    public static int sumFirstAndLastDigit (int number) {
+        int number2 = number;
+        if (number < 0) {
+            System.out.println ("Negative number");
+            return -1;
+        }
+        int lastDigit = number % 10, firstDigit = 0;
+
+        while (number > 0) {
+            firstDigit = number % 10;
+            number /= 10;
+        }
+
+        System.out.println ("Sum of digits for " + number2);
+        return (firstDigit + lastDigit);
+    }
