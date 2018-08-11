@@ -53,7 +53,7 @@
         return sumOfEvens;
     }
 
-//    This code wil return true if 2 numbers have any common digits ----------------
+//    This code wil return true if 2 numbers have any common digits --------------------
 
     public static boolean hasSharedDigit (int number1, int number2) {
         if ((number1 > 99) || (number1 < 10) || (number2 > 99) || (number2 < 10)) return false;
@@ -64,7 +64,6 @@
             while (number2 > 0) {
                 int newNumber2 = number2 % 10;
                 if (newNumber2 == number1Digit) {
-                    System.out.println ("Shared digit is: " + number1Digit + " for " + number2Backup);
                     return true;
                 }
                 number2 /= 10;
@@ -72,6 +71,6 @@
             number2 = number2Backup;
             number1 /= 10;
         }
-
+        
         return false;
     }
