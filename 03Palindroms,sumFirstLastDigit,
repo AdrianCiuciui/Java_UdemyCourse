@@ -37,3 +37,20 @@
         System.out.println ("Sum of digits for " + number2);
         return (firstDigit + lastDigit);
     }
+
+// This code will sum up all Even digits withing a number -------------------
+
+    public static int getEvenDigitSum (int number) {
+        if (number < 0) return -1;
+        int number2 = number, sumOfEvens = 0;
+        while (number2 > 0) {
+            if (number2 % 2 == 0) {
+                sumOfEvens += (number2 % 10);
+            }
+        number2 /= 10;
+        }
+        System.out.println ("Sum of evens for " + number +" is " + sumOfEvens);
+        return sumOfEvens;
+    }
+
+
