@@ -82,3 +82,15 @@
         if ((number1 % 10 == number2 % 10) || (number1 % 10 == number3 % 10) || (number2 % 10 == number3 % 10)) return true;
         return false;
     }
+
+// This code return the value of the Greatest Common Divisor ---------------------------------------------------
+
+    public static int getGreatestCommonDivisor (int first, int second) {
+        if (first < 10 || second < 10) return -1;
+        int divider = 1, biggerNumber;
+        if (first > second) biggerNumber = first; else biggerNumber = second;
+        for (int i = 1;i < biggerNumber;i++) {
+            if (first % i == 0 && second % i == 0) divider = i;
+        }
+        return divider;
+    }
