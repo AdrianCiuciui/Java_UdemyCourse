@@ -87,3 +87,19 @@
             }}
         return (goal == 0);
     }
+
+
+// This method will find out the largest prime number of an entered number ----------------------------
+
+    public static int getLargestPrime (int number) {
+        if (number < 2) return -1;
+        int largestPrime = 0;
+        for (int i = 1; i <= number; i++) {
+            boolean aPrimeIsFound = false;
+            for (int j = 2; j < i;j++) {
+                if (i % j == 0) aPrimeIsFound = true;
+            }
+            if ((number % i == 0) && (!aPrimeIsFound)) largestPrime = i;
+        }
+        return largestPrime;
+    }
