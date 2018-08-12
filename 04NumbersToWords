@@ -1,4 +1,6 @@
-    public static int reverse (int number) {
+   // Numbers to words challange ---------------------------------------------------
+   
+   public static int reverse (int number) {
     int number2 = 0;
     boolean negativeNumber = false;
     if (number < 0) {
@@ -63,4 +65,25 @@
             }
         }
 
+    }
+
+//    Verifys if GOAL can be achieved using the available sacks (or counts, according to the int naming) ----------------
+//      bigCount stands for 5 kg, smallCount stands for 1 kg  -----------------------------------------------------------
+
+    public static boolean canPack (int bigCount, int smallCount, int goal) {
+        if (bigCount < 0 || smallCount < 0 || goal <= 0) {
+            System.out.println ("A number is of negative value");
+            return false;
+        }
+        if (goal >= 5) {
+            while (bigCount > 0 && goal >= 5) {
+                goal -= 5;
+                bigCount--;
+            }}
+        if (goal > 0) {
+            while (smallCount > 0 && goal > 0) {
+                goal -= 1;
+                smallCount--;
+            }}
+        return (goal == 0);
     }
