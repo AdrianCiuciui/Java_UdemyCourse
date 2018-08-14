@@ -1,0 +1,26 @@
+//      This will sum up any 10 numbers that the user inputs. Checks for valid input data.
+
+        Scanner scanner = new Scanner (System.in);
+
+        int count = 1, sum = 0;
+        while (count < 11) {
+            System.out.println ("Enter number #" + count);
+            boolean isAnInt = scanner.hasNextInt ();
+            if (isAnInt) {
+                int number = scanner.nextInt ();
+                sum += number;
+                count++;
+                if (count == 11) {
+                    System.out.println ("The sum is: " + sum);
+                }}
+                else {
+                System.out.println ("Invalid Number");
+            }
+            scanner.nextLine ();
+        }
+        scanner.close ();
+        
+        //
+        
+        
+        
