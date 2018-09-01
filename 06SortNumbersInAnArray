@@ -1,0 +1,48 @@
+// This code will sort the numbers in an array, ascending or descending, just change LINE 40 accordingly. For now it's set to descdending
+
+package com.kheiron;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[] myArray = readInput (5); // read 5 ints, or how many you like, just change the number
+        int[] sortedArray = sortIntegers (myArray); // a new array is defined that takes the values from the sortIntegers method return
+        printArray (sortedArray); // The descending array is printed
+    }
+
+    public static int[] readInput (int number) {
+        Scanner scanner = new Scanner (System.in);
+        int[] values = new int[number];
+        System.out.println ("Please enter " + number + " numbers:\r");
+        for (int i=0; i < number;i++) {
+            values[i] = scanner.nextInt ();
+        }
+        return values;
+    }
+
+    public static void printArray (int[] array) { // prints an array on a single line
+        System.out.println ("Here is the sorted array: ");
+        for (int i=0;i < array.length; i++) {
+            if (i == array.length - 1) {
+                System.out.println (array[i] + "."); // Last value is followed by a dot.
+            } else
+            System.out.print (array[i] + ", ");
+        }
+    }
+
+    public static int[] sortIntegers (int[] array) { // sorts the array and returns it
+        for (int i=0;i < array.length; i++) {
+            for (int j = 0; j < array.length -1; j++) {
+                if (array[i] > array[j]) {         // Use ">" for descending, "<" for ascending
+                    int swap = array [i];
+                    array[i] = array [j];
+                    array [j] = swap;
+                }
+            }
+        }
+        return array;
+    }
+}
